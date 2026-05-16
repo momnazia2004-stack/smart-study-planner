@@ -6,7 +6,6 @@ import Assignment from './Assignment';
 import Reminder from './Reminder';
 import Goals from './Goals'; 
 import Progress from './Progress'; 
-import Reschedule from './Reschedule';
 import Task from './Task';  
 import { 
   LayoutDashboard, CheckCircle2, BookOpen, CalendarDays, 
