@@ -1,0 +1,585 @@
+/* Container and Layout - ORIGINAL */
+.goals-page { 
+    width: 100%; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.header-section { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 30px; 
+}
+
+.add-goal-btn {
+    background: #6366f1; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px;
+    border-radius: 10px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s; /* Added smooth transition */
+}
+
+.add-goal-btn:hover {
+    transform: translateY(-2px); /* Added subtle lift */
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Tabs - Added Glassmorphism but kept your layout */
+.tab-container {
+    display: flex; 
+    gap: 10px; 
+    background: rgba(241, 245, 249, 0.8); /* Added transparency */
+    backdrop-filter: blur(10px); /* Added glass effect */
+    padding: 5px; 
+    border-radius: 12px; 
+    width: fit-content; 
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.tab {
+    padding: 8px 20px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    background: transparent; 
+    color: #64748b; 
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.tab.active { 
+    background: white; 
+    color: #6366f1; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+/* Goal Card UI - Added Hover Effects */
+.goal-card {
+    background: white; 
+    border-radius: 20px; 
+    padding: 25px; 
+    margin-bottom: 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    border: 1px solid #f1f5f9;
+    position: relative; /* Added for the left-line effect */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Added for smoothness */
+}
+
+.goal-card:hover {
+    transform: translateY(-4px); /* Lift effect */
+    border: 1px solid #6366f1; /* Border highlight */
+    box-shadow: 0px 15px 30px rgba(112, 144, 176, 0.12);
+}
+
+/* Added the signature left line on hover from your example */
+.goal-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.goal-card:hover::before {
+    background: #6366f1;
+}
+
+.goal-content { 
+    flex: 1; 
+    margin-right: 20px; 
+}
+
+.goal-header { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 10px; 
+}
+
+.goal-title { 
+    font-weight: 700; 
+    color: #1e293b; 
+    font-size: 1.1rem; 
+}
+
+.goal-percentage { 
+    font-weight: 700; 
+    color: #1e293b; 
+}
+
+.progress-bar-container { 
+    background: #f1f5f9; 
+    height: 10px; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    margin-top: 10px;
+}
+
+.progress-bar-fill { 
+    background: #10b981; 
+    height: 100%; 
+    border-radius: 5px; 
+    transition: width 0.6s ease; /* Made animation smoother */
+}
+
+.bg-success {
+    background: #059669 !important; 
+}
+
+.goal-meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* Modal and Form - EXACTLY SAME AS YOURS */
+.modal-overlay {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.5); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 999;
+}
+
+.goal-form {
+    background: white; 
+    padding: 30px; 
+    border-radius: 20px; 
+    width: 100%; 
+    max-width: 420px;
+}
+
+.form-header { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 25px; 
+    align-items: center;
+}
+
+.goal-form label {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 600;
+}
+
+.goal-form input, .goal-form select {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 10px; 
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.read-only-field {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    border-radius: 10px;
+    color: #475569;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.form-row { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 5px;
+}
+
+.form-row div { 
+    flex: 1; 
+}
+
+.save-btn {
+    background: #6366f1; 
+    color: white; 
+    border: none; 
+    padding: 14px; 
+    border-radius: 12px; 
+    font-weight: 600; 
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.save-btn:hover {
+    background: #4f46e5;
+}
+
+/* Action Buttons Styling - ORIGINAL with small transitions */
+.goal-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.update-progress-link {
+    background: transparent;
+    border: 1px solid #6366f1;
+    color: #6366f1;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    height: fit-content;
+}
+
+.update-progress-link:hover {
+    background: #6366f1;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.action-icon-btn {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-icon-btn.delete { 
+    color: #ef4444; 
+}
+
+.action-icon-btn.delete:hover {
+    background: #fef2f2;
+    transform: scale(1.1);
+}
+/* --- Global Variables (Unified Design System) --- */
+:root {
+  --primary: #4318ff;
+  --primary-dark: #4f46e5;
+  --bg: #f4f7fe;
+  --card-bg: #ffffff;
+  --text: #1b2559;
+  --muted: #64748b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --border: #e2e8f0;
+  --shadow: 0 10px 30px rgba(112, 144, 176, 0.12);
+  --hover: 0 15px 35px rgba(67, 24, 255, 0.15);
+}
+
+/* --- Page Container --- */
+.goals-page { 
+  width: 100%; 
+  max-width: 100%;
+  margin: 0;
+  padding: 35px 55px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8faff 0%, #f1f4f9 100%);
+  box-sizing: border-box;
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* --- Header --- */
+.header-section { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 30px;
+}
+
+.header-section h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+/* --- Add Button --- */
+.add-goal-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(67, 24, 255, 0.2);
+}
+
+.add-goal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hover);
+}
+
+/* --- Tabs (Glass Style) --- */
+.tab-container {
+  display: flex;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: 14px;
+  width: fit-content;
+  margin-bottom: 30px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.tab {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.tab:hover {
+  color: var(--primary);
+  background: rgba(67, 24, 255, 0.06);
+}
+
+.tab.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 8px 15px rgba(67, 24, 255, 0.25);
+}
+
+/* --- Goal Card (Premium Upgrade) --- */
+.goal-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f1f5f9;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.goal-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: var(--hover);
+}
+
+/* Left Accent Line */
+.goal-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.goal-card:hover::before {
+  background: var(--primary);
+}
+
+/* Content */
+.goal-content { 
+  flex: 1; 
+  margin-right: 20px;
+}
+
+.goal-header { 
+  display: flex; 
+  justify-content: space-between; 
+  margin-bottom: 10px;
+}
+
+.goal-title { 
+  font-weight: 800; 
+  color: var(--text); 
+  font-size: 1.1rem;
+}
+
+.goal-percentage { 
+  font-weight: 800; 
+  color: var(--text);
+}
+
+/* Progress Bar */
+.progress-bar-container { 
+  background: #f1f5f9; 
+  height: 10px; 
+  border-radius: 6px; 
+  overflow: hidden; 
+  margin-top: 10px;
+}
+
+.progress-bar-fill { 
+  background: linear-gradient(90deg, var(--primary), #6366f1);
+  height: 100%; 
+  border-radius: 6px; 
+  transition: width 0.6s ease;
+}
+
+/* Success variant */
+.bg-success {
+  background: linear-gradient(90deg, #10b981, #059669) !important;
+}
+
+/* Meta info */
+.goal-meta-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* --- Actions --- */
+.goal-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.update-progress-link {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.update-progress-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.action-icon-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.action-icon-btn.delete {
+  color: var(--danger);
+}
+
+.action-icon-btn.delete:hover {
+  background: #fef2f2;
+  transform: scale(1.15);
+}
+
+/* --- Modal (Glass Modern UI) --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+}
+
+.goal-form {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.goal-form input,
+.goal-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.goal-form input:focus,
+.goal-form select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 24, 255, 0.1);
+}
+
+.save-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* --- Empty State --- */
+.no-data {
+  text-align: center;
+  padding: 60px;
+  color: var(--muted);
+  font-size: 16px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  border: 2px dashed #e2e8f0;
+}

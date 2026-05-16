@@ -1,0 +1,198 @@
+/* --- Global Variables for Consistency --- */
+:root {
+  --primary-purple: #4318ff;
+  --secondary-bg: #f4f7fe;
+  --text-main: #1b2559;
+  --text-muted: #a3aed0;
+  --error-red: #ee5d50;
+  --card-shadow: 0px 15px 35px rgba(112, 144, 176, 0.08);
+  --hover-glow: 0px 10px 25px rgba(67, 24, 255, 0.15);
+}
+
+/* --- Main Layout --- */
+.content-area {
+  flex: 1;
+  padding: 35px 55px;
+  background: linear-gradient(135deg, #f8faff 0%, #f1f4f9 100%);
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* --- Refined Header with Subtitle --- */
+.title-group {
+  margin-bottom: 30px;
+}
+
+.title-group h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.title-group p {
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* --- Modern Glassmorphism Filter Bar --- */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 35px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: 14px;
+  width: fit-content;
+  border: 1px solid rgba(237, 242, 247, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.filter-tab {
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  color: #707ebe;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-tab:hover:not(.active) {
+  background: rgba(67, 24, 255, 0.05);
+  color: var(--primary-purple);
+}
+
+.filter-tab.active {
+  background: var(--primary-purple);
+  color: white;
+  box-shadow: 0 8px 15px rgba(67, 24, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* --- Premium Interactive Cards --- */
+.assignment-card-wide {
+  background: #ffffff;
+  padding: 22px 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border: 1px solid #f1f4f9;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The Signature Blue Glow & Hover */
+.assignment-card-wide:hover {
+  transform: translateY(-4px) scale(1.01);
+  border: 1.5px solid var(--primary-purple);
+  box-shadow: var(--hover-glow);
+}
+
+.assignment-card-wide::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.assignment-card-wide:hover::before {
+  background: var(--primary-purple);
+}
+
+/* --- Card Content & Icons --- */
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.doc-icon-box {
+  background: var(--secondary-bg);
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.assignment-card-wide:hover .doc-icon-box {
+  background: var(--primary-purple);
+  color: white;
+  transform: rotate(-10deg);
+}
+
+.card-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.overdue-text {
+  color: var(--error-red);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.upcoming-text {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* --- Aesthetic Status Pills --- */
+.status-pill-reminder {
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border: 1px solid transparent;
+}
+
+.status-pill-reminder.overdue {
+  background: #fff5f5;
+  color: var(--error-red);
+  border-color: #ffd8d6;
+}
+
+.status-pill-reminder.upcoming {
+  background: #f4f7fe;
+  color: var(--primary-purple);
+  border-color: #dbe4ff;
+}
+
+/* --- Empty State --- */
+.no-data {
+  text-align: center;
+  padding: 50px;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  border: 2px dashed #e0e5f2;
+}

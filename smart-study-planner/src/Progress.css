@@ -1,0 +1,665 @@
+/* =========================================================
+   NEXT-GEN PREMIUM PROGRESS DASHBOARD UI
+   Apple + Linear + Notion + SaaS Inspired
+========================================================= */
+
+:root {
+
+  /* COLORS */
+  --primary: #6366f1;
+  --primary-2: #8b5cf6;
+
+  --blue: #3b82f6;
+  --green: #10b981;
+  --orange: #f59e0b;
+  --red: #ef4444;
+
+  --bg: #f4f7ff;
+
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --glass: rgba(255,255,255,0.68);
+
+  --border: rgba(255,255,255,0.8);
+
+  /* SHADOWS */
+
+  --shadow-sm:
+    0 4px 10px rgba(0,0,0,0.03);
+
+  --shadow-md:
+    0 12px 30px rgba(99,102,241,0.08);
+
+  --shadow-lg:
+    0 25px 55px rgba(99,102,241,0.14);
+
+  --radius: 34px;
+}
+
+/* =========================================================
+   PAGE BACKGROUND
+========================================================= */
+
+.progress-page {
+
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  padding: 38px;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(99,102,241,0.13) 0%,
+      transparent 26%),
+
+    radial-gradient(circle at bottom right,
+      rgba(139,92,246,0.10) 0%,
+      transparent 24%),
+
+    linear-gradient(
+      145deg,
+      #f9fbff 0%,
+      #f5f7ff 45%,
+      #ffffff 100%
+    );
+}
+
+/* BIG BLUR ORBS */
+
+.progress-page::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  border-radius: 50%;
+
+  background: rgba(99,102,241,0.09);
+
+  filter: blur(130px);
+
+  top: -160px;
+  right: -140px;
+}
+
+.progress-page::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  background: rgba(139,92,246,0.08);
+
+  filter: blur(120px);
+
+  bottom: -120px;
+  left: -100px;
+}
+
+/* CONTENT ABOVE BACKGROUND */
+
+.progress-page > * {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.page-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 35px;
+}
+
+.page-header h1 {
+
+  font-size: 3rem;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+
+  color: var(--text);
+}
+
+.page-header p {
+
+  margin-top: 8px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+}
+
+/* =========================================================
+   STATS GRID
+========================================================= */
+
+.stats-container {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+
+  margin-bottom: 32px;
+}
+
+/* =========================================================
+   PREMIUM STAT CARDS
+========================================================= */
+
+.stat-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 185px;
+
+  padding: 30px;
+
+  border-radius: var(--radius);
+
+  background: var(--glass);
+
+  backdrop-filter: blur(24px);
+
+  border: 1px solid var(--border);
+
+  box-shadow:
+    var(--shadow-md);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* FLOAT HOVER */
+
+.stat-card:hover {
+
+  transform:
+    translateY(-10px)
+    scale(1.02);
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+/* LIGHT REFLECTION */
+
+.stat-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -70%;
+  left: -30%;
+
+  width: 180px;
+  height: 400px;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(255,255,255,0),
+      rgba(255,255,255,0.45),
+      rgba(255,255,255,0)
+    );
+
+  transform: rotate(24deg);
+
+  transition: 0.8s ease;
+}
+
+.stat-card:hover::before {
+
+  left: 130%;
+}
+
+/* BOTTOM GLOW */
+
+.stat-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background:
+    linear-gradient(
+      to right,
+      #6366f1,
+      #8b5cf6
+    );
+}
+
+/* =========================================================
+   VARIANT COLORS
+========================================================= */
+
+.yellow-bg::after {
+
+  background:
+    linear-gradient(
+      to right,
+      #f59e0b,
+      #fbbf24
+    );
+}
+
+.purple-bg::after {
+
+  background:
+    linear-gradient(
+      to right,
+      #8b5cf6,
+      #6366f1
+    );
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.stat-card h3 {
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  color: var(--muted);
+
+  margin-bottom: 18px;
+}
+
+.stat-card h1 {
+
+  font-size: 3.2rem;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+
+  color: var(--text);
+
+  line-height: 1;
+}
+
+.stat-card p {
+
+  margin-top: 14px;
+
+  font-size: 0.96rem;
+
+  line-height: 1.7;
+
+  color: #94a3b8;
+}
+
+/* =========================================================
+   CHARTS GRID
+========================================================= */
+
+.charts-grid {
+
+  display: grid;
+
+  grid-template-columns: 1.7fr 1fr;
+
+  gap: 28px;
+}
+
+/* =========================================================
+   CHART CARDS
+========================================================= */
+
+.chart-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 36px;
+
+  padding: 34px;
+
+  background: rgba(255,255,255,0.72);
+
+  backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255,255,255,0.85);
+
+  box-shadow:
+    var(--shadow-md);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.chart-card:hover {
+
+  transform: translateY(-7px);
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+/* SOFT GLOW */
+
+.chart-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  background: rgba(99,102,241,0.07);
+
+  filter: blur(90px);
+
+  top: -80px;
+  right: -80px;
+}
+
+/* =========================================================
+   TITLES
+========================================================= */
+
+.chart-card h2 {
+
+  position: relative;
+
+  z-index: 5;
+
+  font-size: 1.65rem;
+
+  font-weight: 700;
+
+  color: var(--text);
+
+  margin-bottom: 30px;
+
+  letter-spacing: -0.5px;
+}
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.custom-legend {
+
+  margin-top: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.legend-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  color: #475569;
+
+  font-size: 0.97rem;
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   PREMIUM DOTS
+========================================================= */
+
+.dot {
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 15px rgba(0,0,0,0.08);
+}
+
+.dot.blue {
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #8b5cf6
+    );
+}
+
+.dot.red {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ef4444,
+      #fb7185
+    );
+}
+
+.dot.yellow {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f59e0b,
+      #fbbf24
+    );
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state-container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+}
+
+/* ICON */
+
+.empty-icon {
+
+  width: 115px;
+  height: 115px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 28px;
+
+  font-size: 50px;
+
+  color: var(--primary);
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #f5f3ff
+    );
+
+  box-shadow:
+    inset 0 4px 8px rgba(255,255,255,0.9),
+    0 18px 35px rgba(99,102,241,0.16);
+}
+
+/* TEXT */
+
+.empty-state-container h4 {
+
+  font-size: 1.5rem;
+
+  font-weight: 700;
+
+  color: var(--text);
+
+  margin-bottom: 14px;
+}
+
+.empty-state-container p {
+
+  max-width: 350px;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: #94a3b8;
+}
+
+/* =========================================================
+   PREMIUM LINK
+========================================================= */
+
+.clickable-link {
+
+  position: relative;
+
+  color: var(--primary);
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+/* ANIMATED UNDERLINE */
+
+.clickable-link::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  transition: width 0.3s ease;
+}
+
+.clickable-link:hover {
+
+  color: #4f46e5;
+}
+
+.clickable-link:hover::after {
+
+  width: 100%;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+
+  .stats-container {
+
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .charts-grid {
+
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .progress-page {
+
+    padding: 20px;
+  }
+
+  .stats-container {
+
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card,
+  .chart-card {
+
+    padding: 26px;
+  }
+
+  .stat-card h1 {
+
+    font-size: 2.5rem;
+  }
+
+  .page-header h1 {
+
+    font-size: 2.2rem;
+  }
+
+  .chart-card h2 {
+
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,422 @@
+:root {
+    --pastel-blue-light: #f4f7fe;
+    --pastel-indigo: #8e94f3;
+    --pastel-gray-border: #e0e6ed;
+    --text-main: #334e68;
+    --text-muted: #667c99;
+    --white: #ffffff;
+}
+
+/* Base style resets */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: var(--pastel-blue-light);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Page wrapper */
+.auth-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Main card container */
+.auth-card {
+    display: flex;
+    width: 950px;
+    height: 600px;
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* --- Left Branding Panel (Now Centered) --- */
+.branding-panel {
+    flex: 1.2;
+    background: var(--pastel-indigo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center */
+    align-items: center;     /* Horizontally center */
+    padding: 40px;
+    position: relative;
+    color: white;
+    text-align: center;      /* Text alignment center */
+}
+
+.branding-content {
+    z-index: 2;
+    width: 100%;
+}
+
+.branding-content h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.branding-content h2 {
+    font-size: 4rem;
+    margin: 10px 0;
+    line-height: 1; /* Overlap khatam karne ke liye perfect line height */
+    font-weight: 850;
+    color: #1a1a1a; /* Black heading from your image */
+}
+
+.branding-content p {
+    margin: 20px auto 0 auto; /* auto margin se p center ho jayega */
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 320px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Right Form Panel --- */
+.form-panel {
+    flex: 1;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+.form-panel h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- Input Field Styling --- */
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--pastel-gray-border);
+    border-radius: 10px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #fcfcfd;
+}
+
+.input-group input:focus {
+    border-color: var(--pastel-indigo);
+    box-shadow: 0 0 0 4px rgba(142, 148, 243, 0.1);
+}
+
+.password-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.pwd-visibility-toggle {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+/* --- Options & Buttons --- */
+.form-helper-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 30px 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.clickable-link {
+    color: var(--pastel-indigo);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.action-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--pastel-indigo);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-button:hover {
+    filter: brightness(1.05);
+}
+
+.toggle-form-p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .branding-panel {
+        display: none;
+    }
+    .auth-card {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+.action-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    /* Updated to the vibrant blue color from the second image */
+    background-color: #1a4cd8; 
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(26, 76, 216, 0.3);
+}
+
+.action-button:hover {
+    background-color: #153fb3; /* Halka sa dark shade hover par */
+    transform: translateY(-1px);
+}
+/* --- Footer Text Updated --- */
+.toggle-form-p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95rem;
+    /* Is color ko change kiya hai taake ye dark dikhe */
+    color: var(--text-main); 
+    font-weight: 500;
+}
+
+/* Sign In link ko mazeed prominent karne ke liye */
+.toggle-form-p .clickable-link {
+    color: #1a4cd8; /* Wahi vibrant blue jo button ka hai */
+    margin-left: 5px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.toggle-form-p .clickable-link:hover {
+    text-decoration: underline;
+}
+/* --- Alert Styling Fixed --- */
+.custom-alert-banner {
+    position: absolute; /* Card ke andar relative hone ke liye */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffe5e5; /* Halka red background error ke liye */
+    color: #d8000c; /* Dark red text */
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #d8000c;
+    font-size: 0.85rem;
+    font-weight: 500;
+    z-index: 100;
+    width: max-content; /* Text ke mutabiq width */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.auth-card {
+    position: relative; /* Ye line error message ko card ke andar rakhay gi */
+    display: flex;
+    /* baqi purana code... */
+}
+/* --- Alert Styling Updated --- */
+.custom-alert-banner {
+    position: fixed; /* Screen ke hisab se position karne ke liye */
+    top: 30px;      /* Card se thora ooper space dene ke liye */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Background aur Text colors blue theme ke mutabiq */
+    background-color: #eef2ff; /* Halka blue background */
+    color: #1a4cd8;            /* Dark blue text */
+    border: 1px solid #1a4cd8;
+    
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 9999;
+    
+    /* Soft shadow taake ye card se alag (floating) nazar aaye */
+    box-shadow: 0 10px 25px rgba(26, 76, 216, 0.15);
+    
+    /* Animation taake smooth entry ho */
+    animation: fadeInDown 0.4s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+/* --- Options Section (Remember Me) --- */
+.form-helper-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 30px 0;
+    font-size: 0.9rem;
+}
+
+.form-helper-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    /* Light gray se dark color mein change kiya */
+    color: var(--text-main); 
+    font-weight: 500;
+}
+
+/* Checkbox ka color change karne ke liye (Optional) */
+.form-helper-options input[type="checkbox"] {
+    accent-color: #1a4cd8; /* Vibrant blue checkbox */
+    cursor: pointer;
+}
+/* --- Left Branding Panel Updated (Blue Theme) --- */
+.branding-panel {
+    flex: 1.2;
+    /* Aapke Submit button wala vibrant blue color */
+    background: #1a4cd8; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+    color: #ffffff; /* Sara text white kar diya taake readability achi ho */
+    text-align: center;
+}
+
+.branding-content {
+    z-index: 2;
+    width: 100%;
+}
+
+.branding-content h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+.branding-content h2 {
+    font-size: 4rem;
+    margin: 10px 0;
+    line-height: 1.1;
+    font-weight: 850;
+    /* Dark background par white heading behtar lagti hai */
+    color: #ffffff; 
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.branding-content p {
+    margin: 20px auto 0 auto;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 320px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Checkbox (Remember Me) ka color bhi blue kar dein taake match kare */
+.form-helper-options input[type="checkbox"] {
+    accent-color: #1a4cd8;
+}
+/* Font import (Layout ke top par add karein) */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700;900&family=Montserrat:wght@300;400;700&display=swap');
+
+/* --- Left Branding Panel (Refined & Eye-Catchy) --- */
+.branding-panel {
+    flex: 1.2;
+    background: #1a4cd8; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+}
+
+.branding-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 3px; /* Premium look ke liye spacing */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    opacity: 0.85;
+    font-weight: 400;
+}
+
+.branding-content h2 {
+    font-family: 'League Spartan', sans-serif; /* Modern bold font */
+    font-size: 4.5rem;
+    margin: 0;
+    line-height: 0.95; /* Words ko kareeb laya taake impact barhay */
+    font-weight: 900;
+    color: #ffffff;
+    /* Subtle text shadow for depth */
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1); 
+}
+
+.branding-content p {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 30px;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 340px;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.5px;
+}
+
+/* --- Login Button Refinement --- */
+.action-button {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(26, 76, 216, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.action-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 76, 216, 0.4);
+}
