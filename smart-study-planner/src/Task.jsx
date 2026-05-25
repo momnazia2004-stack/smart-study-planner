@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Task.css';
-import Reschedule from './Reschedule';
 import { Trash2, CheckCircle2 } from 'lucide-react'; 
 
 const Task = ({ onNavigate, completeTask: markAsCompleteInApp, onTaskAction, userId: propUserId }) => { 
@@ -93,11 +92,7 @@ const Task = ({ onNavigate, completeTask: markAsCompleteInApp, onTaskAction, use
   };
 
   const handleTaskCardClick = (task) => {
-    const today = new Date().toLocaleDateString('en-CA'); 
-    if (task.deadline && task.deadline < today) {
-      setSelectedTaskName(task.title);
-      setIsModalOpen(true);
-    }
+    
   };
 
   const openDeleteModal = (id) => {
@@ -200,7 +195,7 @@ const Task = ({ onNavigate, completeTask: markAsCompleteInApp, onTaskAction, use
           );
         })}
       </div>
-      <Reschedule isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} taskName={selectedTaskName} />
+      
     </div>
   );
 };
